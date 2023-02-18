@@ -126,6 +126,10 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   HAL_TIM_Base_Start_IT(&htim7);
+
+  // Cài đặt trạng thái cho 2 đèn ở LD3 và LD4
+  // GPIO_PIN_SET: Bật
+  // GPIO_PIN_RESET: Tắt
   HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(LD4_GPIO_Port, LD4_Pin, GPIO_PIN_SET);
   /* USER CODE END 2 */
@@ -639,6 +643,10 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pin : USER_BUTTON_Pin */
+  // Cấu hình chân GPIO cho nút nhấn USER trên vi điều khiển.
+  // Chọn chân USER_BUTTON_Pin là chân được sử dụng cho nút nhấn USER
+  // Chọn chế độ đầu vào cho chân
+
   GPIO_InitStruct.Pin = USER_BUTTON_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
